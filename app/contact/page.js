@@ -4,16 +4,16 @@ const contactDetails = [
   {
     number: "01",
     title: "Email",
-    value: "your@email.com",
+    value: "consult.rishabhr@gmail.com",
     description: "For program and mentorship enquiries.",
-    href: "mailto:your@email.com",
+    href: "mailto:consult.rishabhr@gmail.com",
   },
   {
     number: "02",
     title: "Phone",
-    value: "+91 XXXXX XXXXX",
+    value: "+91 8459348307",
     description: "Connect directly for more information.",
-    href: "tel:+910000000000",
+    href: "tel:+918459348307",
   },
   {
     number: "03",

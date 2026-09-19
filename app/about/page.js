@@ -174,7 +174,7 @@ export default function About() {
                     className="mt-2 text-sm"
                     style={{ color: "var(--muted)" }}
                   >
-                    Mindset & Mentorship
+                    Trainer | Mentor | Speaker
                   </p>
 
                   <div
@@ -188,7 +188,7 @@ export default function About() {
                     className="mt-4 text-sm font-medium"
                     style={{ color: "var(--accent)" }}
                   >
-                    Trainer | Mentor | Speaker
+                    Beyond Books
                   </p>
                 </div>
               </div>
