@@ -40,12 +40,12 @@ export default function Footer() {
                   color: "var(--accent)",
                 }}
               >
-                R
+                M
               </div>
 
               <div>
                 <h2 className="text-base font-semibold tracking-wide">
-                  Rishabh Randive
+                  Mindbuilder
                 </h2>
 
                 <p
@@ -111,17 +111,17 @@ export default function Footer() {
               style={{ color: "var(--muted)" }}
             >
               <a
-                href="mailto:your@email.com"
+                href="mailto:consult.rishabhr@gmail.com"
                 className="group block transition duration-300 hover:text-[var(--accent)]"
               >
-                your@email.com
+                consult.rishabhr@gmail.com
               </a>
 
               <a
-                href="tel:+910000000000"
+                href="tel:+918459348307"
                 className="group block transition duration-300 hover:text-[var(--accent)]"
               >
-                +91 XXXXX XXXXX
+                +91 84593 48307
               </a>
 
               <Link
@@ -148,7 +148,7 @@ export default function Footer() {
           style={{ color: "var(--muted)" }}
         >
           <p>
-            © {new Date().getFullYear()} Rishabh Randive. All rights reserved.
+            © {new Date().getFullYear()} Mindbuilder. All rights reserved.
           </p>
 
           <p>
