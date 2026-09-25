@@ -37,14 +37,14 @@ export default function Navbar() {
             className="flex items-center"
             onClick={() => setMenuOpen(false)}
           >
-            <div className="relative h-20 w-20 overflow-hidden sm:h-16 sm:w-16">
+            <div className="relative h-20 w-20 overflow-hidden sm:h-20 sm:w-20">
               <Image
                 src="/logo.png"
                 alt="MindBuilder"
                 fill
                 priority
                 className="object-contain"
-                sizes="84px"
+                sizes="80px"
               />
             </div>
           </Link>
