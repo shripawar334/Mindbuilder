@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
@@ -14,8 +16,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
+  const { theme, toggleTheme } = useTheme();
   const isBlue = theme === "blue";
 
   return (
@@ -28,38 +30,22 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-
+          
           {/* Logo */}
           <Link
             href="/"
-            className="group flex items-center gap-3"
+            className="flex items-center"
             onClick={() => setMenuOpen(false)}
           >
-            <div
-              className="flex h-11 w-11 items-center justify-center rounded-xl border text-lg font-bold transition-all duration-500"
-              style={{
-                borderColor: "var(--accent)",
-                color: "var(--accent)",
-                backgroundColor: "var(--accent-soft)",
-              }}
-            >
-              M
-            </div>
-
-            <div className="hidden sm:block">
-              <h1
-                className="text-sm font-semibold tracking-wide"
-                style={{ color: "var(--foreground)" }}
-              >
-                MindBuilder
-              </h1>
-
-              <p
-                className="text-xs"
-                style={{ color: "var(--muted)" }}
-              >
-                Mindset & Mentorship
-              </p>
+            <div className="relative h-20 w-20 overflow-hidden sm:h-16 sm:w-16">
+              <Image
+                src="/logo.png"
+                alt="MindBuilder"
+                fill
+                priority
+                className="object-contain"
+                sizes="84px"
+              />
             </div>
           </Link>
 
@@ -82,73 +68,77 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Theme Toggle */}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition-all duration-300"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--surface)",
-              color: "var(--foreground)",
-            }}
-            aria-label="Toggle website theme"
-          >
-            <span className="text-sm">
-              {isBlue ? "◐" : "◑"}
-            </span>
-
-            <span>
-              {isBlue ? "B&W" : "Blue"}
-            </span>
-          </button>
-
-          {/* CTA */}
-          <div className="hidden lg:block">
-            <Link
-              href="/contact"
-              className="rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300"
+          {/* Right Side */}
+          <div className="flex items-center gap-3">
+            
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition-all duration-300"
               style={{
-                backgroundColor: "var(--accent)",
-                color: "var(--cta-text)",
+                borderColor: "var(--border)",
+                backgroundColor: "var(--surface)",
+                color: "var(--foreground)",
               }}
+              aria-label="Toggle website theme"
             >
-              Get Started
-            </Link>
-          </div>
+              <span className="text-sm">
+                {isBlue ? "◐" : "◑"}
+              </span>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border lg:hidden"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--surface)",
-              color: "var(--foreground)",
-            }}
-            aria-label="Toggle menu"
-          >
-            <div className="space-y-1.5">
-              <span
-                className={`block h-0.5 w-5 bg-current transition duration-300 ${
-                  menuOpen ? "translate-y-2 rotate-45" : ""
-                }`}
-              />
+              <span>
+                {isBlue ? "B&W" : "Blue"}
+              </span>
+            </button>
 
-              <span
-                className={`block h-0.5 w-5 bg-current transition duration-300 ${
-                  menuOpen ? "opacity-0" : ""
-                }`}
-              />
-
-              <span
-                className={`block h-0.5 w-5 bg-current transition duration-300 ${
-                  menuOpen ? "-translate-y-2 -rotate-45" : ""
-                }`}
-              />
+            {/* CTA */}
+            <div className="hidden lg:block">
+              <Link
+                href="/contact"
+                className="rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300"
+                style={{
+                  backgroundColor: "var(--accent)",
+                  color: "var(--cta-text)",
+                }}
+              >
+                Get Started
+              </Link>
             </div>
-          </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg border lg:hidden"
+              style={{
+                borderColor: "var(--border)",
+                backgroundColor: "var(--surface)",
+                color: "var(--foreground)",
+              }}
+              aria-label="Toggle menu"
+            >
+              <div className="space-y-1.5">
+                <span
+                  className={`block h-0.5 w-5 bg-current transition duration-300 ${
+                    menuOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
+                />
+
+                <span
+                  className={`block h-0.5 w-5 bg-current transition duration-300 ${
+                    menuOpen ? "opacity-0" : ""
+                  }`}
+                />
+
+                <span
+                  className={`block h-0.5 w-5 bg-current transition duration-300 ${
+                    menuOpen ? "-translate-y-2 -rotate-45" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -164,7 +154,6 @@ export default function Navbar() {
           }}
         >
           <div className="space-y-1 px-6 py-5">
-
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -189,9 +178,11 @@ export default function Navbar() {
               }}
             >
               <span>{isBlue ? "◐" : "◑"}</span>
+
               Switch to {isBlue ? "Black & White" : "Blue"}
             </button>
 
+            {/* Mobile CTA */}
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
@@ -203,7 +194,6 @@ export default function Navbar() {
             >
               Get Started
             </Link>
-
           </div>
         </div>
       </nav>

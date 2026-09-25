@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Rishabh Randive | Mindset & Mentorship",
+  title: "MindBuilder | Mindset & Mentorship",
   description:
     "Beyond Books — Mental Strength, Mindset and Mentorship for Students.",
 };
